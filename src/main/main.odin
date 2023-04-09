@@ -4,12 +4,13 @@ import "core:fmt"
 import "core:os"
 import "core:path/filepath"
 import "core:log"
-import "../wotan"
+import "../app"
 
 main :: proc() {
     context.logger = setup_log()
     log.info("Log set up.")
-    wotan.app()
+    app.init()
+    defer app.deinit()
 }
 
 setup_log :: proc() -> log.Logger {
