@@ -27,5 +27,6 @@ setup_log :: proc() -> log.Logger {
     if err != 0 {
         panic("Couldn't create log file. Exiting ...")
     }
-    return log.create_file_logger(log_file, .Debug, log_opts)
+	
+	return log.create_multi_logger(log.create_file_logger(log_file, .Debug, log_opts), log.create_console_logger(.Debug, log_opts))
 }
