@@ -1,0 +1,3 @@
+* Wotan
+
+This is my [[Odin][https://odin-lang.org/]] experiment.
